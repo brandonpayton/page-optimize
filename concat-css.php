@@ -43,10 +43,6 @@ class Page_Optimize_CSS_Concat extends WP_Styles {
 		$this->all_deps( $handles );
 
 		$stylesheet_group_index = 0;
-		// Merge CSS into a single file
-		$concat_group = 'concat';
-		// Concat group on top (first array element gets processed earlier)
-		$stylesheets[ $concat_group ] = array();
 
 		foreach ( $this->to_do as $key => $handle ) {
 			$obj = $this->registered[ $handle ];
@@ -136,7 +132,14 @@ class Page_Optimize_CSS_Concat extends WP_Styles {
 					$media = 'all';
 				}
 
-				$stylesheets[ $concat_group ][ $media ][ $handle ] = $css_url_parsed['path'];
+				if (
+					! isset( $stylesheets[ $stylesheet_group_index ][ $media ][ $handle ] ) ||
+					! is_array( $stylesheets[ $stylesheet_group_index ][ $media ][ $handle ] )
+				) {
+					$stylesheets[ $stylesheet_group_index ][ $media ][ $handle ] = array();
+				}
+
+				$stylesheets[ $stylesheet_group_index ][ $media ][ $handle ] = $css_url_parsed['path'];
 				$this->done[] = $handle;
 			} else {
 				$stylesheet_group_index ++;
