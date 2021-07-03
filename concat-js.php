@@ -62,6 +62,9 @@ class Page_Optimize_JS_Concat extends WP_Scripts {
 		$this->all_deps( $handles );
 		$level = 0;
 
+		// Expose items so tests can check concat output against the initial todo items
+		do_action( 'page_optimize_doing_script_items', $this->to_do, $group );
+
 		$using_strict = false;
 		foreach ( $this->to_do as $key => $handle ) {
 			$script_is_strict = false;
