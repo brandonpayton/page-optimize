@@ -15,6 +15,7 @@ class Test_URL_To_File_Mapping extends PHPUnit\Framework\TestCase {
 	// TODO: Relative URLs
 
 	function test_abspath_resolution() {
+		throw new Exception( 'ouch' );
 		$site_url = 'https://example.com/site';
 		$site_dir = __DIR__ . '/data/url-to-file-mapping/site';
 		$content_url = 'https://example.com/site/wp-content';

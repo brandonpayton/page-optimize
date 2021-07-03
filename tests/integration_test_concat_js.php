@@ -10,6 +10,7 @@ class Test_Js_Concat_Output extends PHPUnit\Framework\TestCase {
 	}
 
 	function test_concat_order_with_defaults() {
+		throw new Exception( 'ouch' );
 		$this->run_test_to_assert_concat_order( 'http://127.0.0.1/' );
 	}
 
