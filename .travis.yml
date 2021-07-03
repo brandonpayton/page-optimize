@@ -65,6 +65,7 @@ before_script:
       composer global require dealerdirect/phpcodesniffer-composer-installer wp-coding-standards/wpcs phpcompatibility/phpcompatibility-wp:*
       composer install
     fi
+
 script:
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
