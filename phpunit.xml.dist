@@ -11,8 +11,5 @@
 		<testsuite>
 			<directory prefix="unit_test_" suffix=".php">./tests/</directory>
 		</testsuite>
-		<testsuite>
-			<directory prefix="integration_test_" suffix=".php">./tests/</directory>
-		</testsuite>
 	</testsuites>
 </phpunit>
