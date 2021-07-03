@@ -1,5 +1,8 @@
 <?php
 
+// TODO: Test that concat exclusions are actually excluded
+// TODO: Test how concat works with scripts with attached inline script
+
 class Test_Css_Concat_Output extends PHPUnit\Framework\TestCase {
 	function setUp() {
 		// Disable warnings due to improperly formed content
