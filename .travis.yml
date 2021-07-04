@@ -32,7 +32,6 @@ install:
 
 before_script:
   - export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-  - set -euo pipefail
   - |
     if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
       phpenv config-rm xdebug.ini
@@ -41,6 +40,7 @@ before_script:
     fi
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
+      set -euo pipefail
       bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
       composer global require "phpunit/phpunit=4.8.*|5.7.*"
       composer global require "wp-cli/wp-cli-bundle"
