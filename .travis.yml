@@ -71,7 +71,7 @@ script:
     if [[ ! -z "$WP_VERSION" ]] ; then
       echo PHP UNIT YAY:
       phpunit --verbose --configuration phpunit.xml.dist
-      WP_MULTISITE=1 phpunit
+      #WP_MULTISITE=1 phpunit
     fi
   - |
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
