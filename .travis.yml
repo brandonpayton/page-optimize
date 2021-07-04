@@ -68,9 +68,9 @@ before_script:
     fi
 
 script:
-  - set -euo pipefail
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
+      set -euo pipefail
       echo PHP UNIT YAY:
       phpunit --verbose --configuration phpunit.xml.dist
       #WP_MULTISITE=1 phpunit
