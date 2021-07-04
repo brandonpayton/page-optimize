@@ -69,7 +69,8 @@ before_script:
 script:
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
-      phpunit
+      echo PHP UNIT YAY:
+      phpunit --verbose
       WP_MULTISITE=1 phpunit
     fi
   - |
