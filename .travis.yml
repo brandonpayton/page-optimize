@@ -71,6 +71,8 @@ script:
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
       set -euo pipefail
+      ls
+      cat phpunit.xml.dist
       echo PHP UNIT YAY:
       phpunit --verbose --configuration phpunit.xml.dist
       #WP_MULTISITE=1 phpunit
