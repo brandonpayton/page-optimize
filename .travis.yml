@@ -70,7 +70,7 @@ script:
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
       echo PHP UNIT YAY:
-      phpunit --verbose
+      phpunit --verbose --configuration phpunit.xml.dist
       WP_MULTISITE=1 phpunit
     fi
   - |
