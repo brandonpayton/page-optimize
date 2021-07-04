@@ -45,7 +45,6 @@ before_script:
       composer global require "phpunit/phpunit=4.8.*|5.7.*"
       composer global require "wp-cli/wp-cli-bundle"
 
-      # DRY these changes
       mysqladmin create wordpress_integration --user="root" --password="" --host=localhost
 
       # Add 'nobody' group in case it doesn't yet exist. Debian has 'nogroup', but php-fpm init expects 'nobody'.
@@ -75,6 +74,7 @@ script:
       cat phpunit.xml.dist
       echo PHP UNIT YAY:
       phpunit --verbose --configuration phpunit.xml.dist
+      sleep 1
       #WP_MULTISITE=1 phpunit
     fi
   - |
